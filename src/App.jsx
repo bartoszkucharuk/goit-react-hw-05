@@ -41,7 +41,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/characters" element={<CharactersList />} />
-        <Route path="/character/:id" element={<CharacterDetails />} />
+        <Route path="/character/:nazwaParams" element={<CharacterDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

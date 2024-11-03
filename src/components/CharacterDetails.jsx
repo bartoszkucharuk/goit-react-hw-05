@@ -3,8 +3,8 @@ import { useCharacter } from "../hooks/useCharacter";
 
 export default function CharacterDetails() {
 
-  const { id } = useParams();
-  const character = useCharacter(id);
+  const { nazwaParams } = useParams();
+  const character = useCharacter(nazwaParams);
 
   if (character === null) {
     return <p>loading...</p>;

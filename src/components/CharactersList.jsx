@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCharacters } from "../hooks/useCharacters"
 
 export default function CharactersList() {
@@ -5,7 +6,8 @@ export default function CharactersList() {
     return (
         <div>
             {charactersList.map((character) => (
-                <p key={character.id}>{character.name}</p>
+                <Link to={`/character/${character.id}`} key={character.id}>{character.name} - {character.id}
+                < br /></Link>
             ))}
         </div>
     );
