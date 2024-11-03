@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom'
 import './App.css'
 import CharactersList from './components/CharactersList'
+import CharacterDetails from "./components/CharacterDetails"
 
 function Home() {
   return <h1>Home</h1>
@@ -40,6 +41,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/characters" element={<CharactersList />} />
+        <Route path="/character/:id" element={<CharacterDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
