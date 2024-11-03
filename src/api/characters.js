@@ -6,3 +6,10 @@ export const fetchCharacters = async () => {
     );
     return response.data.results
 }
+
+export const fetchCharacter = async (id) => {
+    const response = await axios.get(
+            `https://rickandmortyapi.com/api/character/${id}`
+    );
+    return response.data;
+}
