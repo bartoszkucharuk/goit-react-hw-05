@@ -1,9 +1,29 @@
-import React from 'react'
+// import { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
+// import { getMovieReviews } from "../api/API";
 
-export default function MovieReviews() {
-  return (
-    <div>
-      <h4>Movie reviews</h4>
-    </div>
-  )
-}
+// const MovieReviews = () => {
+//   const { movieId } = useParams();
+//   const [reviews, setReviews] = useState([]);
+
+//   useEffect(() => {
+//     getMovieReviews(movieId).then(setReviews).catch(console.error);
+//   }, [movieId]);
+
+//   if (!reviews.length) {
+//     return <p>No reviews available.</p>;
+//   }
+
+//   return (
+//     <ul>
+//       {reviews.map((review) => (
+//         <li key={review.id}>
+//           <h3>{review.author}</h3>
+//           <p>{review.content}</p>
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// };
+
+// export default MovieReviews;

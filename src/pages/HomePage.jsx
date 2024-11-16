@@ -1,9 +1,23 @@
-import React from 'react'
+import { useState, useEffect } from "react";
+import { fetchTrendingMovies } from "../api/API";
+import MovieList from "../components/MovieList";
+import "../css/HomePage.module.css";
 
-export default function HomePage() {
+const HomePage = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetchTrendingMovies().then(setMovies).catch(console.error);
+  }, []);
+
   return (
-    <div>
-      <h4>Home page</h4>
+    <div className="homePage">
+      <div className="trending-container">
+        <h2 className="trending-title">Trending today</h2>
+        <MovieList movies={movies} />
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default HomePage;
