@@ -4,13 +4,13 @@ import styles from "../css/MovieList.module.css";
 const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
-    <div className={styles.movieGrid}>
+    <div>
       {movies.map((movie) => (
-        <div key={movie.id} className={styles.movieCard}>
+        <div key={movie.id}>
           <Link
             to={`/movies/${movie.id}`}
             state={{ from: location }}
-            className={styles.movieLink}
+            
           >
             {/* <img
               src={
@@ -19,10 +19,10 @@ const MovieList = ({ movies }) => {
                   : "https://via.placeholder.com/200x300?text=No+Image"
               }
               alt={movie.title}
-              className={styles.movieImage}
+              
             /> */}
-            <div className={styles.movieTitleContainer}>
-              <h3 className={styles.movieTitle}>{movie.title}</h3>
+            <div >
+              <h3 >{movie.title}</h3>
             </div>
           </Link>
         </div>

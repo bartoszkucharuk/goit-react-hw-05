@@ -10,10 +10,3 @@ export const fetchTrendingMovies = async () => {
   // console.log(response.data.results);
   return response.data.results;
 };
-
-export const searchMovies = async (query) => {
-  const response = await axios.get(
-    `${BASE_URL}/search/movie?query=${query}&api_key=${API_KEY}`
-  );
-  return response.data.results;
-};
