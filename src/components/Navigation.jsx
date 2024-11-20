@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function Navigation() {
+const Navigation = () => {
   const setActive = ({ isActive }) => {
     return isActive ? "active" : "";
   };
@@ -11,3 +11,4 @@ export default function Navigation() {
         </nav>
     );
 };
+export default Navigation;

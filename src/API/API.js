@@ -7,6 +7,5 @@ export const fetchTrendingMovies = async () => {
   const response = await axios.get(
     `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`
   );
-  // console.log(response.data.results);
   return response.data.results;
-};
+};   
