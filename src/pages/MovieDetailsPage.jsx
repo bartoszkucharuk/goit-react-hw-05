@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import {
   useParams,
@@ -7,7 +6,7 @@ import {
   useLocation,
   useNavigate
 } from "react-router-dom";
-import { getMovieDetails } from "../api/API";
+import { getMovieDetails } from "../API/API";
 import styles from "../css/MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
@@ -32,16 +31,16 @@ const MovieDetailsPage = () => {
     : "https://via.placeholder.com/500x750?text=No+Image";
 
   return (
-    <div className={styles.container}>
+    <div>
       {/* Przycisk "Back" */}
-      <button className={styles.backButton} onClick={() => navigate(backLink)}>
+      <button onClick={() => navigate(backLink)}>
         ← Back
       </button>
 
       {/* Sekcja szczegółów filmu */}
-      <div className={styles.details}>
-        <img src={imageUrl} alt={title} className={styles.poster} />
-        <div className={styles.info}>
+      <div>
+        <img src={imageUrl} alt={title} />
+        <div>
           <h1>{title}</h1>
           <p>User score: {vote_average * 10}%</p>
           <h2>Overview</h2>
@@ -51,22 +50,20 @@ const MovieDetailsPage = () => {
         </div>
       </div>
 
-      <div className={styles.additionalInfo}>
+      <div>
         <h2>Additional Information</h2>
-        <div className={styles.navLinks}>
+        <div>
           <NavLink
             to="cast"
-            className={styles.navLink}
             activeClassName={styles.activeLink}
           >
-            Cast
+            Cast_
           </NavLink>
           <NavLink
             to="reviews"
-            className={styles.navLink}
             activeClassName={styles.activeLink}
           >
-            Reviews
+            Reviews_
           </NavLink>
         </div>
       </div>
