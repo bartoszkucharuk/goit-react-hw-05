@@ -6,7 +6,9 @@ export default function HomePage() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetchTrendingMovies().then(setMovies).catch(console.error);
+        fetchTrendingMovies()
+            .then(setMovies)
+            .catch(console.error);
     }, []);
 
     return (
