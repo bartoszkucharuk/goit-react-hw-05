@@ -1,37 +1,42 @@
-import { useEffect, useState } from 'react'
-import MovieList from '../components/MovieList';
-import { searchParams} from "react-router-dom"
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { searchMovies } from "../API/API";
+import MovieList from "../components/MovieList";
 
-export default function MoviesPage() {
+const MoviesPage = () => {
+  const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-    const [movies, setMovies] = useState([]);
+  const searchInput = searchParams.get("searchQuery") || "";
 
-    useEffect(() => {
-        if (query) {
-            searchMovies(searchMoviesInput)
-                .then(setMovies)
-                .catch(console.error);
-        }
-    }, [query]);
-
-    const handleSearch = (event) => {
-        event.preventDefault();
-        const form = event.currentTarget;
-        const query = form.elements.query.value;
-        setSearchParams({ query });
+  useEffect(() => {
+    if (searchInput) {
+      searchMovies(searchInput).then(setMovies).catch(console.error);
     }
+  }, [searchInput]);
 
-    return (
-        <div>
-            <form>
-                <input
-                    name="searchMoviesInput"
-                    type="text"
-                    placeholder="Search movies..."
-                />
-                <button type="submit" onSubmit={handleSearch}>Search</button>
-            </form>
-            <MovieList movies={movies} />
-        </div>
-    );
-}
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const searchQuery = form.elements.searchQuery.value;
+    setSearchParams({ searchQuery });
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSearch}>
+        <input
+          name="searchQuery"
+          type="text"
+          placeholder="Search movies..."
+        />
+        <button type="submit">
+          Search
+        </button>
+      </form>
+      <MovieList movies={movies} />
+    </div>
+  );
+};
+
+export default MoviesPage;
