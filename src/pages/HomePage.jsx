@@ -17,7 +17,6 @@ export default function HomePage() {
                 <h2>Trending today</h2>
                 <MovieList movies={movies} />
             </div>
-      
         </div>
     );
 }
