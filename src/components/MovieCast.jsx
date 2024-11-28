@@ -10,25 +10,24 @@ export default function MovieCast() {
         getMovieCast(movieId).then(setCast).catch(console.error);
     }, [movieId]);
 
-    if (!cast.length) {
-        <div>Sorry, we don't have any information about cast yet. </div>
-    };
-
     return (
         <div>
-            <ul>
-                {cast.map((castActor) => (
-                    <li key={castActor.id}>
-                        <img
-                            src={castActor.profile_path
+            {cast.length > 0 ? (
+                <ul>
+                    {cast.map((castActor) => (
+                        <li key={castActor.id}>
+                            <img
+                                src={castActor.profile_path
                                 ? `https://image.tmdb.org/t/p/w45${castActor.profile_path}`
-                            : "https://placehold.co/45x60"}
-                            alt={castActor.name}
-                        />
-                        <p>{castActor.name}: {castActor.character}</p>
-                    </li>
-                ))}
-            </ul>
+                                : "https://placehold.co/45x60?text=no+photo"}
+                                alt={castActor.name}
+                            />
+                            <p>{castActor.name}: {castActor.character}</p>
+                        </li>
+                    ))}
+                </ul>
+                ) : (<p>Sorry, we don't have any information about cast yet. </p>
+            )}
         </div>
     );
 }

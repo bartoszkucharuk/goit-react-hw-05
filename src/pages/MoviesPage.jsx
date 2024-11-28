@@ -20,6 +20,7 @@ const MoviesPage = () => {
     const form = event.currentTarget;
     const searchQuery = form.elements.searchQuery.value;
     setSearchParams({ searchQuery });
+    form.reset();
   };
 
   return (
@@ -34,6 +35,11 @@ const MoviesPage = () => {
           Search
         </button>
       </form>
+
+      {movies.length === 0 && searchInput && (
+        <p>No movies found for "{searchInput}".</p>
+      )}
+
       <MovieList movies={movies} />
     </div>
   );

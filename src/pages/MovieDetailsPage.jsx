@@ -17,11 +17,11 @@ export default function MovieDetailsPage() {
     return <div>Loading infos...</div>;
   }
 
-  const { poster_path, title, genres, overview, release_date, popularity, vote_average } = movie; 
+  const { poster_path, title, genres, overview, release_date, vote_average } = movie; 
 
   const moviePoster = poster_path
     ? `https://image.tmdb.org/t/p/w200${poster_path}`
-    : "https://placehold.co/200x300";
+    : "https://placehold.co/200x300?text=no+photo";
   
   const releaseYear = release_date.split("-")[0];
   const genresList = () => genres.map((genre) => genre.name).join(", ");
@@ -35,10 +35,10 @@ export default function MovieDetailsPage() {
           <h2>{title} ({releaseYear})</h2>
           <p>User Score: {vote_average.toFixed(1)}</p>
 
-          <h2>Overview</h2>
+          <h3>Overview</h3>
           <p>{overview}</p>
           
-          <h2>Genres</h2>
+          <h3>Genres</h3>
           <p>{genresList()}</p>
         </div>
       </div>

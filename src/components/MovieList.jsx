@@ -15,7 +15,7 @@ export default function MovieList({ movies }) {
                 <img
                     src={movie.poster_path
                         ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
-                        : "https://placehold.co/200x300"
+                        : "https://placehold.co/200x300?text=poster+not+found"
                     }
                     alt={movie.title}
                 />
