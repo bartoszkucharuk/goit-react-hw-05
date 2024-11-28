@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams, NavLink, Link, useLocation, Outlet, useNavigate } from 'react-router-dom'
+import { useParams, NavLink, useLocation, Outlet, useNavigate } from 'react-router-dom'
 import { getMovieDetails } from '../API/API'
 
 export default function MovieDetailsPage() {
@@ -40,8 +40,17 @@ export default function MovieDetailsPage() {
           
           <h2>Genres</h2>
           <p>{genresList()}</p>
-        </div>  
+        </div>
       </div>
+
+      <div>
+        <h3>Additional information</h3>
+        <div>
+          <NavLink to="cast">Cast</NavLink>
+          <NavLink to="reviews">Reviews</NavLink>
+        </div>
+      </div>
+      <Outlet />
     </div>
-  )
-}
+  );
+};

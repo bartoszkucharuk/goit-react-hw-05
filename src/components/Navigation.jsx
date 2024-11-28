@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
-  const setActive = ({ isActive }) => {
-    return isActive ? "active" : "";
+  const setActive = ({ isActive }) => {return isActive ? "active" : "";
   };
     return (
         <nav>
