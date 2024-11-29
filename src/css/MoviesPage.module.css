@@ -1,0 +1,52 @@
+.homePage {
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.input {
+    height: 30px;
+    width: 200px;
+    border: 1px solid #c09d6f;
+    border-radius: 4px;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input:hover,
+.input:focus {
+    border-color: darkorange;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 36px;
+    width: 120px;
+    padding: 0px 24px;
+    margin: 0;
+    line-height: 1;
+    border: 1px solid darkgray;
+    transition: color 0.3s;
+    transition: background-color 0.2s;
+}
+
+.button:hover,
+.button:focus {
+    color: darkorange;
+    background-color: black;
+}
