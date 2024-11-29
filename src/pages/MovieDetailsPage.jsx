@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, NavLink, useLocation, Outlet, useNavigate } from 'react-router-dom'
 import { getMovieDetails } from '../API/API'
 import css from "../css/MovieDetailsPage.module.css"
@@ -17,7 +17,7 @@ export default function MovieDetailsPage() {
   }, [movieId])
 
   if (!movie) {
-    return <div>Loading infos...</div>;
+    return <div>Loading...</div>;
   }
 
   const { poster_path, title, genres, overview, release_date, vote_average } = movie; 
