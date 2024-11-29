@@ -58,11 +58,11 @@
 
 .desc {
     margin: 0;
-    padding: 0 0 12px 12px;
+    padding: 0 0 6px 12px;
 }
 
 .header {
-    padding: 0 0 12px 12px;
+    padding: 0 0 6px 12px;
     margin: 0;
 }
 
@@ -70,8 +70,8 @@
     text-align: justify;
     margin: 0;
     padding: 0 0 12px 12px;
-    line-height: 1;
-    height: 100px;
+    line-height: 1.2;
+    height: 126px;
     overflow: auto;
 }
 

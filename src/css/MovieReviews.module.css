@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 620px;
+    width: 820px;
 }
 
 ul {
@@ -25,7 +25,7 @@ li {
 
 .previewContent{
     text-align: justify;
-    height: 220px;
+    max-height: 230px;
     padding-left: 12px;
     overflow: auto;
     text-overflow: ellipsis;
