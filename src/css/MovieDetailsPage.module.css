@@ -1,0 +1,98 @@
+.movieDetailsPage {
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid blue;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 36px;
+    width: 120px;
+    padding: 0px 24px;
+    margin-bottom: 16px;
+    line-height: 1;
+    border: 1px solid darkgray;
+    transition: color 0.3s;
+    transition: background-color 0.2s;
+}
+
+.button:hover,
+.button:focus {
+    color: darkorange;
+    background-color: black;
+}
+
+.detailsCard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.moviePoster {
+    width: 200px;
+    height: 300px;
+    object-fit: contain;
+    flex-direction:column;
+    }
+
+.detailsDesc {
+    border: 1px solid red;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 12px;
+    padding: 0;
+    line-height: 1;
+}
+
+.desc {
+    margin: 0;
+    padding: 0 0 12px 12px;
+}
+
+.header {
+    padding: 0 0 12px 12px;
+    margin: 0;
+}
+
+.overview {
+    text-align: justify;
+    margin: 0;
+    padding: 0 0 12px 12px;
+    line-height: 1;
+    height: 100px;
+    overflow: auto;
+}
+
+.additionalInformation {
+    margin: 6px auto;
+}
+
+.navMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.navLink {
+    color: #c09d6f;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.navLink:hover,
+.navLink:focus {
+    color: darkorange;
+}

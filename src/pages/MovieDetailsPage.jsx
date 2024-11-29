@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, NavLink, useLocation, Outlet, useNavigate } from 'react-router-dom'
 import { getMovieDetails } from '../API/API'
+import css from "../css/MovieDetailsPage.module.css"
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -27,27 +28,27 @@ export default function MovieDetailsPage() {
   const genresList = () => genres.map((genre) => genre.name).join(", ");
 
   return (
-    <div>
-      <button onClick={() => navigate(goBackLocation)}>&larr; Go back</button>
-      <div>
-        <img src={moviePoster} alt={title} />
-        <div>
-          <h2>{title} ({releaseYear})</h2>
-          <p>User Score: {vote_average.toFixed(1)}</p>
+    <div className={css.movieDetailsPage}>
+      <button className={css.button} onClick={() => navigate(goBackLocation)}>go back</button>
+      <div className={css.detailsCard}>
+        <img classname={css.moviePoster} src={moviePoster} alt={title} />
+        <div className={css.detailsDesc}>
+          <h2 className={css.title}>{title} ({releaseYear})</h2>
+          <p className={css.desc}>User Score: {vote_average.toFixed(1)}</p>
 
-          <h3>Overview</h3>
-          <p>{overview}</p>
+          <h3 className={css.header}>Overview</h3>
+          <p className={css.overview}>{overview}</p>
           
-          <h3>Genres</h3>
-          <p>{genresList()}</p>
+          <h3 className={css.header}>Genres</h3>
+          <p className={css.desc}>{genresList()}</p>
         </div>
       </div>
 
       <div>
-        <h3>Additional information</h3>
-        <div>
-          <NavLink to="cast">Cast</NavLink>
-          <NavLink to="reviews">Reviews</NavLink>
+        <h3 className={css.additionalInformation}>Additional information</h3>
+        <div className={css.navMenu}>
+          <NavLink className={css.navLink} to="cast">Cast</NavLink>
+          <NavLink className={css.navLink} to="reviews">Reviews</NavLink>
         </div>
       </div>
       <Outlet />

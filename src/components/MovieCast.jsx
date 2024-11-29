@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getMovieCast } from '../API/API';
+import css from "../css/MovieCast.module.css"
 
 export default function MovieCast() {
     const { movieId } = useParams();
@@ -11,7 +12,7 @@ export default function MovieCast() {
     }, [movieId]);
 
     return (
-        <div>
+        <div className={css.cast}>
             {cast.length > 0 ? (
                 <ul>
                     {cast.map((castActor) => (
