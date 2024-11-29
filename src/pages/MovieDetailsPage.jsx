@@ -11,7 +11,9 @@ export default function MovieDetailsPage() {
   const goBackLocation = location.state?.from || "/movies";
 
   useEffect(() => {
-    getMovieDetails(movieId).then(setMovie).catch(console.error);
+    getMovieDetails(movieId)
+      .then(setMovie)
+      .catch(console.error);
   }, [movieId])
 
   if (!movie) {

@@ -12,7 +12,9 @@ const MoviesPage = () => {
 
   useEffect(() => {
     if (searchInput) {
-      searchMovies(searchInput).then(setMovies).catch(console.error);
+      searchMovies(searchInput)
+        .then(setMovies)
+        .catch(console.error);
     }
   }, [searchInput]);
 
