@@ -18,6 +18,7 @@ export default function MovieCast() {
                     {cast.map((castActor) => (
                         <li key={castActor.id}>
                             <img
+                                loading="lazy"
                                 src={castActor.profile_path
                                 ? `https://image.tmdb.org/t/p/w45${castActor.profile_path}`
                                 : "https://placehold.co/45x60?text=no+photo"}

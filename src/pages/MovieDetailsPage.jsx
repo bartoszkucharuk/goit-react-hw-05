@@ -33,7 +33,7 @@ export default function MovieDetailsPage() {
     <div className={css.movieDetailsPage}>
       <button className={css.button} onClick={() => navigate(goBackLocation)}>go back</button>
       <div className={css.detailsCard}>
-        <img classname={css.moviePoster} src={moviePoster} alt={title} />
+        <img loading="lazy" classname={css.moviePoster} src={moviePoster} alt={title} />
         <div className={css.detailsDesc}>
           <h2 className={css.title}>{title} ({releaseYear})</h2>
           <p className={css.desc}>User Score: {vote_average.toFixed(1)}</p>

@@ -14,6 +14,7 @@ export default function MovieList({ movies }) {
                     to={`/movies/${movie.id}`}
                     state={{ from: location }}>
                     <img
+                        loading="lazy"
                         className={css.moviePoster}
                         src={movie.poster_path
                         ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
